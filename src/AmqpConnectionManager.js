@@ -57,7 +57,7 @@ export default class AmqpConnectionManager extends EventEmitter {
         this._currentUrl = 0;
         this.connectionOptions = options.connectionOptions;
 
-        this.heartbeatIntervalInSeconds = options.heartbeatIntervalInSeconds options.heartbeatIntervalInSeconds || HEARTBEAT_IN_SECONDS;
+        this.heartbeatIntervalInSeconds = options.heartbeatIntervalInSeconds ? options.heartbeatIntervalInSeconds || HEARTBEAT_IN_SECONDS;
         this.reconnectTimeInSeconds = options.reconnectTimeInSeconds || this.heartbeatIntervalInSeconds;
 
         // There will be one listener per channel, and there could be a lot of channels, so disable warnings from node.
